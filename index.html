@@ -17,32 +17,43 @@
 </head>
 
 <body class="bg-dark ">
-  <div class="container my-5 d-flex flex-column p-4 bg-light border rounded-3">
-    <h2 class="text-center mb-3 ">Pali</h2>
+  <div class="container my-5 d-flex flex-column p-4 bg-light border border-5   border-warning  rounded-3">
+    <h2 class="text-center mb-3 fw-bold display-3  ">Pali</h2>
     <div class="mb-3">
-      <label for="user-input" class="form-label">Inserisci la parola da verificare</label>
-      <input type="text" class="form-control" id="user-input" placeholder="Parola da controllare">
+      <label for="user-input-pali" class="form-label fw-bold">Insert the word to check</label>
+      <input type="text" class="form-control" id="user-input-pali" placeholder="Insert word here">
     </div>
     <div class="buttons d-flex gap-5 justify-content-center ">
-      <button id="send-button" type="button" class="btn btn-lg  btn-success align-self-center ">Invia i dati</button>
-      <button id="cancel-button" type="button" class="btn btn-lg btn-danger align-self-center ">Cancella</button>
+      <button id="send-button-pali" type="button" class="btn btn-lg  btn-success align-self-center ">Check</button>
+      <button id="cancel-button-pali" type="button" class="btn btn-lg btn-danger align-self-center ">Cancel</button>
     </div>
-    <label for="response" class="form-label mt-3">Esito della verifica</label>
-    <div id="response" class="mb-3 p-1 bg-warning border rounded-1"></div>
+    <label for="response-pali" class="form-label mt-3 fw-bold">Results</label>
+    <div id="response-pali" class="mb-3 p-1 bg-warning border rounded-1" style="min-height: 40px;"></div>
   </div>
 
-  <div class="container my-5 d-flex flex-column p-4 bg-light border rounded-3">
-    <h2 class="text-center mb-3 ">Pali</h2>
+  <div class="container my-5 d-flex flex-column p-4 bg-light border border-5   border-warning rounded-3">
+    <h2 class="text-center mb-3 fw-bold display-3">Odd or Even</h2>
+    <label class="form-label fw-bold">Choose an option</label>
+    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+      <input type="radio" class="btn-check" name="user-choice" id="odd" autocomplete="off">
+      <label class="btn btn-outline-warning text-dark fw-bold " for="odd">Odd</label>
+      <input type="radio" class="btn-check" name="user-choice" id="even" autocomplete="off">
+      <label class="btn btn-outline-warning text-dark fw-bold " for="even">Even</label>
+    </div>
     <div class="mb-3">
-      <label for="user-input" class="form-label">Inserisci la parola da verificare</label>
-      <input type="text" class="form-control" id="user-input" placeholder="Parola da controllare">
+      <label for="user-input-odd-or-even" class="form-label fw-bold mt-3 ">Insert a Number</label>
+      <input type="number" class="form-control" id="user-input-odd-or-even"
+        placeholder="Choose Odd or Even to procede..." disabled>
     </div>
     <div class="buttons d-flex gap-5 justify-content-center ">
-      <button id="send-button" type="button" class="btn btn-lg  btn-success align-self-center ">Invia i dati</button>
-      <button id="cancel-button" type="button" class="btn btn-lg btn-danger align-self-center ">Cancella</button>
+      <button id="send-button-odd-or-even" type="button" class="btn btn-lg  btn-success align-self-center"
+        disabled>Invia i
+        dati</button>
+      <button id="cancel-button-odd-or-even" type="button"
+        class="btn btn-lg btn-danger align-self-center ">Cancella</button>
     </div>
-    <label for="response" class="form-label mt-3">Esito della verifica</label>
-    <div id="response" class="mb-3 p-1 bg-warning border rounded-1"></div>
+    <label for="response-odd-or-even" class="form-label mt-3 fw-bold">Esito della verifica</label>
+    <div id="response-odd-or-even" class="mb-3 p-1 bg-warning border rounded-1" style="min-height: 40px;"></div>
   </div>
 
 

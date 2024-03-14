@@ -1,24 +1,22 @@
-
+//! Pali
 //TODO Palidroma
 //TODO Chiedere all’utente di inserire una parola
 //TODO Creare una funzione per capire se la parola inserita è palindroma
 
-
-//! Pali
 //&input
-const userInput = document.getElementById("user-input");
+const userInputPali = document.getElementById("user-input-pali");
 //&buttons
-const sendButton = document.getElementById("send-button");
-const cancelButton = document.getElementById("cancel-button");
+const sendButtonPali = document.getElementById("send-button-pali");
+const cancelButtonPali = document.getElementById("cancel-button-pali");
 //&outout
-const response = document.getElementById("response");
+const responsePali = document.getElementById("response-pali");
 
 
-sendButton.addEventListener('click', function () {
-    response.innerHTML = "";
-    if (isNaN(userInput.value)) {
-        let parola = userInput.value;
-        response.innerHTML += paliWord(parola) ? `La parola scelta (${parola}) è un palindromo!` : `La parola scelta (${parola}) non è un palindromo!`
+sendButtonPali.addEventListener('click', function () {
+    responsePali.innerHTML = "";
+    if (isNaN(userInputPali.value)) {
+        let parola = userInputPali.value.toLowerCase();
+        responsePali.innerHTML += paliWord(parola) ? `The word (${parola}) is a palindrome!` : `The word  (${parola}) is not a palindrome!`
     } else {
         alert("inserisci una parola")
     }
@@ -33,7 +31,58 @@ function paliWord(word) {
     return true;
 }
 
-cancelButton.addEventListener('click', function () {
-    response.innerHTML = userInput.value = "";
+cancelButtonPali.addEventListener('click', function () {
+    responsePali.innerHTML = userInputPali.value = "";
 })
 
+
+
+//!Pari e Dispari
+//TODO L’utente sceglie pari o dispari e inserisce un numero da 1 a 5.
+//TODO Generiamo un numero random (sempre da 1 a 5) per il computer (usando una funzione).
+//TODO Sommiamo i due numeri
+//TODO Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
+//TODO Dichiariamo chi ha vinto.
+
+//&input
+const userInputOddOrEven = document.getElementById("user-input-odd-or-even");
+//&buttons
+const sendButtonOddOrEven = document.getElementById("send-button-odd-or-even");
+const cancelButtonOddOrEven = document.getElementById("cancel-button-odd-or-even");
+const evenChoice = document.getElementById("even");
+const oddChoice = document.getElementById("odd")
+//&outout
+const responseOddOrEven = document.getElementById("response-odd-or-even");
+
+//^FUNCTIONS
+function enableElements(elements) {
+    elements.forEach(element => {
+        if (element.disabled) {
+            element.disabled = false;
+        }
+    });
+}
+
+
+//~CODE
+
+evenChoice.addEventListener("click", () => {
+    enableElements([sendButtonOddOrEven, userInputOddOrEven]);
+    userInputOddOrEven.placeholder = "Insert a number from 1 to 5"
+})
+oddChoice.addEventListener("click", () => {
+    enableElements([sendButtonOddOrEven, userInputOddOrEven]);
+    userInputOddOrEven.placeholder = "Insert a number from 1 to 5"
+})
+
+sendButtonOddOrEven.addEventListener('click', function () {
+    //controllo input
+    let userNumberChoice = parseInt(userInputOddOrEven.value)
+    if (isNaN(userNumberChoice) || userNumberChoice < 1 || userNumberChoice > 5) {
+        alert("Devi Inserire un numero valido tra 1 e 5")
+        userNumberChoice.innerHTML = ""
+    }
+
+    let pcNmber = getRndInteger(1, 5)
+
+})
