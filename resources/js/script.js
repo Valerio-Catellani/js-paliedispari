@@ -62,6 +62,14 @@ function enableElements(elements) {
         }
     });
 }
+function compareNumbers(firstNumber, SecondNumber) {
+    let sum = firstNumber + SecondNumber;
+    if (sum % 2 === 0) {
+        return "even"
+    } else {
+        return "odd"
+    }
+}
 
 
 //~CODE
@@ -81,8 +89,21 @@ sendButtonOddOrEven.addEventListener('click', function () {
     if (isNaN(userNumberChoice) || userNumberChoice < 1 || userNumberChoice > 5) {
         alert("Devi Inserire un numero valido tra 1 e 5")
         userNumberChoice.innerHTML = ""
+    } else {
+        let pcNmber = getRndInteger(1, 5);
+        let compareResults = compareNumbers(userNumberChoice, pcNmber);
+        let userChoice = evenChoice.checked === true ? "even" : "odd";
+        if (compareResults === userChoice) {
+            responseOddOrEven.innerHTML = `User won beacuse he chose ${userChoice} and ${userNumberChoice}, which when added to the number chosen by the computer (${pcNmber}) resulted in ${compareResults}.`
+        } else {
+            responseOddOrEven.innerHTML = `User lose beacuse he chose ${userChoice} and ${userNumberChoice}, which when added to the number chosen by the computer (${pcNmber}) resulted in ${compareResults}.`
+        }
     }
+})
 
-    let pcNmber = getRndInteger(1, 5)
-
+cancelButtonOddOrEven.addEventListener('click', function () {
+    evenChoice.checked = oddChoice.checked = false;
+    sendButtonOddOrEven.disabled = userInputOddOrEven.disabled = true;
+    userInputOddOrEven.placeholder = "Choose Odd or Even to procede..."
+    responseOddOrEven.innerHTML = userInputOddOrEven.value = "";
 })
